@@ -3,7 +3,7 @@
 ## QUESTION:
 - Can a client's profile predict successful/growth in stock investment? 
 
-## Variables:
+## We are using S&P 500 stocks data where we have extracted the csv file using yfinance API to pgadmin called constituents.csv
 -
 
 ## Reason Why Topic Was Chosen:
