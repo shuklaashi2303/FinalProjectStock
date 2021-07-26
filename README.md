@@ -14,7 +14,7 @@
 
 ## Description of Data Source: 
 - Data is gathered from yahoo finance 
-- another source is to use finance using- pip install finance
+- another source is to use finance using- pip install yfinance
 
 ## Questions Hoping to Answer:
 - What is the expected value of the customers' stocks based on their portfolio in the future? (prediction)
