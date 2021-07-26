@@ -1,4 +1,3 @@
-# download.jpeg![download](https://user-images.githubusercontent.com/79673185/126924445-7023b8d5-23b1-4e1a-9efd-4deb17691f6c.jpeg)
 
 ### Topic: Stock Analysis
 
