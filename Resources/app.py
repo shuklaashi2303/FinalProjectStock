@@ -3,7 +3,9 @@
 # Run this app with `python app.py` and
 # visit http://127.0.0.1:8050/ in your web browser.
 
+import os
 import dash
+import pathlib
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
@@ -11,11 +13,31 @@ import pandas as pd
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 
-external_scripts = ['/assets/style.css']
+external_scripts = ['/static/style.css']
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+app.title = "PREDICT STOCK APP"
+
+#PATH = pathlib.Path(__file__).parent
+#DATA_PATH = PATH.joinpath("data").resolve()
+
+# Loading historical tick data
+#currency_pair_data = {
+#    "MMM": pd.read_csv(
+ #       DATA_PATH.joinpath("MMM.csv"), index_col=1, parse_dates=["Date"]
+ #   ),
+ #   "AOS": pd.read_csv(
+ #       DATA_PATH.joinpath("AOS.csv"), index_col=1, parse_dates=["Date"]
+#    ),
+#    "MTL": pd.read_csv(
+ #       DATA_PATH.joinpath("GBPUSD.csv"), index_col=1, parse_dates=["Date"]
+ ##   ),
+  
+#}
+
 
 
 def getFig(symble='MMM'):
@@ -27,7 +49,7 @@ def getFig(symble='MMM'):
     return fig
 
 # READ List
-df = pd.read_csv('constituents.csv')
+df = pd.read_csv('/Users/sb/Documents/Project/FinalProjectStock/Resources')
 droptown_items = []
 for index, row in df.iterrows():
    droptown_items.append({'label': row['Name'], 'value': row['Symbol']})
