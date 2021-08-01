@@ -15,9 +15,11 @@
 - Has Machine Learning potential
 
 ## Description of Data Source: 
-- Data is gathered from yahoo finance 
-- another source is to use finance using- pip install finance
-
+- Data is gathered from yahoo finance and saved into csv file called constituents.csv
+- constituents.csv dataset has three columns such as Symbol, Name & Sector. It also has 506 rows
+- We used both stored and live data to conduct this research analysis
+- Another source is to use finance using- pip install finance
+- Exploratory Analysis is conducted and the details are in the folder with the same name
 ## Questions Hoping to Answer:
 - What is the expected value of the customers' stocks based on their portfolio in the future? (prediction)
 - What is the future value of the customers' stocks based on their current portfolio? (prediction)
