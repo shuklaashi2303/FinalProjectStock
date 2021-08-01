@@ -49,7 +49,7 @@ def getFig(symble='MMM'):
     return fig
 
 # READ List
-df = pd.read_csv('/Users/sb/Documents/Project/FinalProjectStock/Resources')
+df = pd.read_csv('/Users/sb/Documents/Project/FinalProjectStock/Resources/constituents.csv')
 droptown_items = []
 for index, row in df.iterrows():
    droptown_items.append({'label': row['Name'], 'value': row['Symbol']})
