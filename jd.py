@@ -19,16 +19,44 @@ ticker = [i for i in data['Symbol']]
 # Build App
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 app.layout = html.Div([
     html.H1("Predict Stock App"),
-    dcc.Graph(id='graph'),
-    html.Label(["Stock Symbols"]),
-    dcc.Dropdown(
-        id='Stock Symbols-dropdown', clearable=False,
-        value='ticker', 
-        options=[{'label': i, 'value': i} for i in ticker]
-        )
+# Dividing the dashboard in tabs
+    dcc.Tabs(id="tabs", children=[
+        html.H1("Stocks Prices", 
+                style={'textAlign': 'center'}),
+        # Adding the first dropdown menu and the subsequent time-series graph
+        html.Div([
+                  html.Div([dcc.Dropdown(id='Stock Symbols-dropdown', clearable=False,
+                  value='ticker', 
+                  options=[{'label': i, 'value': i} for i in ticker],
+                  multi=True,
+                  style={"display": "block", "margin-left": "auto", "margin-right": "auto", "width": "60%"}),
+    dcc.Graph(id='graph')],
+    className="container"),
+        ])
     ])
+])
+
+# Defining the layout of the second tab
+dcc.Tab(label='Performance Metrics', children=[
+    html.H1("Analysis of Stocks", 
+            style={"textAlign": "center"}),
+    # Adding a dropdown menu and the subsequent histogram graph
+    html.Div([
+            html.Div([dcc.Dropdown(id='feature-selected1',
+            options=[{'label': i, 'value': i} for i in ticker],
+                        value="Type")],
+                        className="twelve columns", 
+                        style={"display": "block", "margin-left": "auto",
+                                        "margin-right": "auto", "width": "60%"}),
+                    ], className="row",
+                    style={"padding": 50, "width": "60%", 
+                           "margin-left": "auto", "margin-right": "auto"}),
+                    dcc.Graph(id='graph'),
+        ])
+
 
 @app.callback(Output('graph', 'figure'),
               #Output('Analysis', 'figure'),
@@ -43,7 +71,7 @@ def update_figure(value):
         if not search_value:
            raise PreventUpdate
            return [o for o in ticker if search_value in o["label"]]
-    fig = px.line(Stock_Data, x="Date", y="MMM")
+    fig = px.line(stock_data, x="Date", y="Adj Close")
 
 
     fig.update_layout(
@@ -79,7 +107,17 @@ def update_figure(value):
 
     
     
-    return fig
+    return {
+        'data': [trace],
+        'layout': go.Layout(title=f'Metrics considered: {selected_feature1.title()}',
+                            colorway=["#EF963B", "#EF533B"], hovermode="closest",
+                            xaxis={'title': "Distribution", 
+                                   'titlefont': {'color': 'black', 'size': 14},
+                                   'tickfont': {'size': 14, 'color': 'black'}},
+                            yaxis={'title': "Frequency", 
+                                   'titlefont': {'color': 'black', 'size': 14, },
+                                   'tickfont': {'color': 'black'}})}
 
 # Run app and display result external in the notebook
-app.run_server(mode='external')
+if __name__ == '__main__':
+    app.run_server(debug=True)
