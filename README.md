@@ -1,6 +1,6 @@
 ![images](https://user-images.githubusercontent.com/79673185/126924525-8ead7039-b6dd-4469-8c71-83ec00f70d9a.jpeg)
 
-### Topic: Stock Analysis
+## Topic: Stock Analysis
 
 ## QUESTION:
 - Can a client's profile predict successful/growth in stock investment? 
