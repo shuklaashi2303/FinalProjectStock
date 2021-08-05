@@ -1,0 +1,189 @@
+*{
+ margin: 0;
+ padding:0;
+ box-sizing: 0;
+ font-family: 'Crimson Pro', serif;
+}
+
+body{
+    height:100vh;
+    /* overflow: hidden; */
+}
+
+.container{
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.content{
+    /* margin-left: 40px; */ 
+    flex: 75%;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+
+.Navigation{ 
+    flex: 25%;
+    /* position:fixed; */
+    position: relative;
+
+    width:250px;
+    height:100vh;
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FAE1DD;
+    padding: 0 10px;
+    
+}
+
+
+.start{
+    margin-top: 10rem;
+    margin-bottom: 5%;
+    color: #3D1D01;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.stockp{
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    top: 60px;
+    text-align: center;
+}
+
+.dash-dropdown{
+    width:70%;
+}
+.header{
+    margin-top: 75px;
+    height: 15vh;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logo{
+    position: absolute;
+    width: 50px;
+    height:50px;
+    align-self: center;
+    right: 5%;
+}
+
+#ticker{
+    align-self: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+
+.decription_ticker{
+    position: relative;
+    top: -10px;
+    margin: 0px 35px;
+    line-height: 1.5;
+}
+
+.Buttons{
+    margin-top:20%;
+    width: 60%; 
+    position: flex;
+    flex-direction: column;
+    text-align: center;
+   
+}
+
+.stock-btn{
+    flex: 100%;
+}
+
+.companyprofile-btn{
+    flex:100%
+}
+
+.Buttons button{
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 5px black;
+    margin-top: 20px;
+    cursor: pointer; 
+    color:black;
+font-size: 15px;
+    background-color: #FEC89A;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+#main-content{
+    margin-top: 6%;
+}
+
+.graphs-content{
+    margin-top: 50%;
+}
+
+.graph-dounut{
+    display: 'inline-block';
+    width:20vw;
+    height: 20vh;
+}
+
+.dounuts{
+    text-align: center;
+    overflow:hidden;
+    flex-direction: row;
+}
+
+.dounuts div {
+    width: 50%;
+}
+
+.kpi{
+    margin:5% 5%;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.kpi div {
+    width:30%;
+    height:10vh;
+    overflow: hidden;
+    background-color: rgb(235, 232, 232);
+    border-radius: 20px;
+    box-shadow: 1px 1px 7px grey;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.kpi div P {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color:rgb(43, 42, 42);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.kpi div H4 {
+    margin-top: 5px;
+    color: rgb(54, 54, 54);
+    /* padding: 10px; */
+     
+}
+
+/* #floating bar */
+.modebar{
+    display: none !important;
+}
